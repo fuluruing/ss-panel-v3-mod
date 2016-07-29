@@ -25,7 +25,7 @@
 			<section class="content-inner margin-top-no">
 				<div class="row">
 				
-				{if $enable_alipay != 'false'}
+					{if $enable_alipay != 'false'}
 					<div class="col-lg-12 col-md-12">
 						<div class="card margin-bottom-no">
 							<div class="card-main">
@@ -201,8 +201,11 @@
 				alipay();
 			}
 		})
+		
+		
+		
 		{/if}
-    })
+    
 	
 	timestamp = {time()}; 
 		
@@ -227,5 +230,6 @@
 		tid = setTimeout(f, 1000); //循环调用触发setTimeout
 	}
 	setTimeout(f, 1000);
+})
 </script>
 
