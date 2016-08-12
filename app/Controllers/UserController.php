@@ -1376,9 +1376,7 @@ class UserController extends BaseController
 	public function updateRss($request, $response, $args)
     {
 		$protocol = $request->getParam('protocol');
-        $protocol_param = $request->getParam('protocol_param');
 		$obfs = $request->getParam('obfs');
-        $obfs_param = $request->getParam('obfs_param');
         
         $user = $this->user;
 		
@@ -1391,9 +1389,7 @@ class UserController extends BaseController
         $antiXss = new AntiXSS();
 		
 		$user->protocol = $antiXss->xss_clean($protocol);
-        $user->protocol_param = $antiXss->xss_clean($protocol_param);
         $user->obfs = $antiXss->xss_clean($obfs);
-        $user->obfs_param = $antiXss->xss_clean($obfs_param);
         $user->save();
 
         $res['ret'] = 1;
